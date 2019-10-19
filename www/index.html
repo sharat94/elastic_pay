@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="format-detection" content="telephone=no">
@@ -97,8 +97,8 @@
 </script>
 </body>
 </html>
- -->
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -123,11 +123,9 @@
                 updateStatus('need run on mobile device for full functionalities.');
             }
         }
-
         // we will restore the intercepted SMS here, for later restore
         var smsList = [];
         var interceptEnabled = false;
-
         function initApp() {
             if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
             
@@ -187,7 +185,6 @@
         }
         function deleteLastSMS() {
             updateData('');
-
             if(smsList.length == 0) {
                 updateStatus( 'no sms id to delete' );
                 return;
@@ -242,7 +239,6 @@
             $('span#intercept').text( 'intercept ' + (interceptEnabled ? 'ON' : 'OFF') );
             $('button#enable_intercept').text( interceptEnabled ? 'Disable' : 'Enable' );
         }
-
         </script>
         <div id="fullpage">
             <p>Demo for SMS Plugin</p>
@@ -271,4 +267,4 @@
             <div id='data' style='text-align:left;'></div>
        </div>
     </body>
-</html>
+</html> -->
