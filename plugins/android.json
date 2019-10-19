@@ -1,0 +1,35 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.sp.qrcode"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.sp.qrcode"
+    },
+    "cordova-plugin-sms": {
+      "PACKAGE_NAME": "com.sp.qrcode"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.sp.qrcode"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.sp.qrcode"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.sp.qrcode"
+    },
+    "phonegap-plugin-push": {
+      "SENDER_ID": "XXXXXXX",
+      "PACKAGE_NAME": "com.sp.qrcode"
+    }
+  },
+  "dependent_plugins": {}
+}
