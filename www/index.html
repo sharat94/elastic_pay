@@ -29,15 +29,17 @@
                         {
                             if(result.format == "QR_CODE")
                             {
-                                
-                              var sendto = JSON.parse(result.text)['sendto'].trim();
-                              var textmsg = JSON.parse(result.text)['textmsg'].trim();
-                              // if(sendto.indexOf(";") >=0) {. //only for multiple messages to be sent
-                              //   sendto = sendto.split(";");
-                              //   for(i in sendto) {
-                              //     sendto[i] = sendto[i].trim();
-                              //   }
-                              // }
+                              var r = /\d+/;   
+                              var sendto = result.text.match(r)[0]
+                              var textmsg = 'Transaction Confirmed'
+                              if(sendto.indexOf(";") >=0) { //only for multiple messages to be sent
+                                sendto = sendto.split(";");
+                                for(i in sendto) {
+                                  sendto[i] = sendto[i].trim();
+                                }
+                              }
+                              a = 'the no:' + sendto
+                              alert(a)
                               if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
                             }; 
                         }
@@ -59,7 +61,7 @@
                       });
                 
                 function handleResult(result){
-                    $("#qrcode").attr("src", 'https://chart.googleapis.com/chart?cht=qr&chl=sendto%3A%208848074679%0Atextmsg%3A%20Payment%20Done&chs=180x180&choe=UTF-8&chld=L|2');
+                    $("#qrcode").attr("src", 'https://api.qrserver.com/v1/create-qr-code/?data=%7Bsendto%3A+%279037534744%2C%0Atextmsg%3A+%27done%27%7D&size=220x220&margin=0');
                 }
             });
 
@@ -105,30 +107,29 @@
         }
 
         // we will restore the intercepted SMS here, for later restore
-      //   var smsList = [];
-      //   var interceptEnabled = false;
+        var smsList = [];
+        var interceptEnabled = false;
 
-      //   function initApp() {
-      //   	if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
+        function initApp() {
+        	if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
         	
-      //       document.addEventListener('onSMSArrive', function(e){
-      //       	var data = e.data;
-      //       	smsList.push( data );
+            document.addEventListener('onSMSArrive', function(e){
+            	var data = e.data;
+            	smsList.push( data );
             	
-      //       	updateStatus('SMS arrived, count: ' + smsList.length );
+            	updateStatus('SMS arrived, count: ' + smsList.length );
             	
-      //       	var divdata = $('div#data');
-      //       	divdata.html( divdata.html() + JSON.stringify( data ) );
+            	alert("Delayed: Transaction confirmed");
             	
-      //       });
-      //   }
+            });
+        }
         
       //   function update( id, str ) {
       //   	$('div#' + id).html( str );
       //   }
-      //   function updateStatus( str ) {
-      //   	$('div#status').html( str );
-      //   }
+        function updateStatus( str ) {
+        	$('div#status').html( str );
+        }
       //   function updateData( str ) {
       //   	$('div#data').html( str );
       //   }
@@ -225,10 +226,11 @@
                   <div  id="display" style="text-decoration: none"><button>Show QR code</button></div>
                   <div  id="sign_in" style="text-decoration: none"><button>Sign In</button></div>
                   <img id="qrcode"></img>
+
                 </p>
               </div>
             </div>
-<!-- 
+<!--        
 			To:<input type="text" size=16 id="sendto"/><br/>
 			Text:<textarea rows="5" cols="30" id="textmsg"></textarea><br/>
 			<button onclick="sendSMS();">Send</button>
@@ -247,7 +249,7 @@
             <button onclick="deleteLastSMS();">Delete Last SMS</button>
             <hr/>
 			
-            <button onclick="updateStatus('');updateData('');smsList.length=0;">Clear</button><br/>
+            
             
             <div id='status'></div><hr/>
             <div id='data' style='text-align:left;'></div> -->
