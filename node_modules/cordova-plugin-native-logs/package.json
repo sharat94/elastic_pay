@@ -1,0 +1,56 @@
+{
+  "_from": "cordova-plugin-native-logs",
+  "_id": "cordova-plugin-native-logs@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-Q2ZbRN4vYT04G9yTUtU+Tt0IkMs=",
+  "_location": "/cordova-plugin-native-logs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-native-logs",
+    "name": "cordova-plugin-native-logs",
+    "escapedName": "cordova-plugin-native-logs",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-native-logs/-/cordova-plugin-native-logs-1.0.5.tgz",
+  "_shasum": "43665b44de2f613d381bdc9352d53e4edd0890cb",
+  "_spec": "cordova-plugin-native-logs",
+  "_where": "/Users/synup/Documents/GitHub/personal/elastic_pay_mobile",
+  "author": {
+    "name": "Olivier Goguel"
+  },
+  "bugs": {
+    "url": "https://github.com/ogoguel/cordova-plugin-native-logs/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-native-logs",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "A Cordova plugin to retrieve native logs",
+  "homepage": "https://github.com/ogoguel/cordova-plugin-native-logs#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-native-logs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogoguel/cordova-plugin-native-logs.git"
+  },
+  "types": "./types/index.d.ts",
+  "version": "1.0.5"
+}

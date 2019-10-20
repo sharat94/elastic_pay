@@ -47,6 +47,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "PushNotification"
       ]
+    },
+    {
+      "id": "cordova-plugin-native-logs.NativeLogs",
+      "file": "plugins/cordova-plugin-native-logs/www/nativeLogs.js",
+      "pluginId": "cordova-plugin-native-logs",
+      "clobbers": [
+        "window.NativeLogs"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -56,6 +64,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-whitelist": "1.2.2",
     "phonegap-plugin-barcodescanner": "8.1.0",
-    "phonegap-plugin-push": "1.8.4"
+    "phonegap-plugin-push": "1.8.4",
+    "cordova-plugin-native-logs": "1.0.5"
   };
 });

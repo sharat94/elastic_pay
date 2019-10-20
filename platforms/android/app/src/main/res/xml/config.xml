@@ -20,6 +20,10 @@
     <feature name="PushNotification">
         <param name="android-package" value="com.adobe.phonegap.push.PushPlugin" />
     </feature>
+    <feature name="NativeLogs">
+        <param name="android-package" value="com.del7a.nativelogs.NativeLogs" />
+        <param name="onload" value="true" />
+    </feature>
     <name>elastic_pay_mobile</name>
     <description>
         Push sample application that receives push notifications.

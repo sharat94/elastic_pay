@@ -640,6 +640,14 @@ module.exports = [
         "clobbers": [
             "window.SMS"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-native-logs/www/nativeLogs.js",
+        "id": "cordova-plugin-native-logs.NativeLogs",
+        "pluginId": "cordova-plugin-native-logs",
+        "clobbers": [
+            "window.NativeLogs"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -667,7 +675,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "phonegap-plugin-push": "1.8.4",
     "phonegap-plugin-barcodescanner": "8.1.0",
-    "cordova-plugin-sms": "1.0.5"
+    "cordova-plugin-sms": "1.0.5",
+    "cordova-plugin-native-logs": "1.0.5"
 }
 // BOTTOM OF METADATA
 });
