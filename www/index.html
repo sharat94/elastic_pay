@@ -29,18 +29,33 @@
                         {
                             if(result.format == "QR_CODE")
                             {
-                              var r = /\d+/;   
-                              var sendto = result.text.match(r)[0]
-                              var textmsg = 'Transaction Confirmed'
-                              if(sendto.indexOf(";") >=0) { //only for multiple messages to be sent
-                                sendto = sendto.split(";");
-                                for(i in sendto) {
-                                  sendto[i] = sendto[i].trim();
+                              if(SMS) SMS.listSMS({}, function(data){
+                                alert('Seller Valid')
+                                if(Array.isArray(data)) {
+                                  for(var i in data) {
+                                    var sms = data[i];
+                                      if (sms.includes(result.text)){
+                                        alert('Seller Valid')
+                                    }
+                                      else {
+                                        alert('seller invalid')
+                                    }
+                                  }
                                 }
-                              }
-                              a = 'the no:' + sendto
-                              alert(a)
-                              if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
+                              });
+
+                              // var r = /\d+/;   
+                              // var sendto = result.text.match(r)[0]
+                              // var textmsg = 'Transaction Confirmed'
+                              // if(sendto.indexOf(";") >=0) { //only for multiple messages to be sent
+                              //   sendto = sendto.split(";");
+                              //   for(i in sendto) {
+                              //     sendto[i] = sendto[i].trim();
+                              //   }
+                              // }
+                              // a = 'the no:' + sendto
+                              // alert(a)
+                              // if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
                             }; 
                         }
                     },
@@ -61,7 +76,7 @@
                       });
                 
                 function handleResult(result){
-                    $("#qrcode").attr("src", 'https://api.qrserver.com/v1/create-qr-code/?data=%7Bsendto%3A+%279037534744%2C%0Atextmsg%3A+%27done%27%7D&size=220x220&margin=0');
+                    $("#qrcode").attr("src", 'https://api.qrserver.com/v1/create-qr-code/?data=290130&size=220x220&margin=0');
                 }
             });
 
